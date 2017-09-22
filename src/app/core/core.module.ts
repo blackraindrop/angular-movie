@@ -3,19 +3,16 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
 import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
     SharedModule
   ],
   declarations: [
-    HeaderComponent,
-    SidebarComponent
+    HeaderComponent
   ],
   exports: [
-    HeaderComponent,
-    SidebarComponent
+    HeaderComponent
   ]
 })
 export class CoreModule {
