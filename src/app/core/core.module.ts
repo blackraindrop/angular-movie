@@ -1,4 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -9,13 +10,9 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [SharedModule],
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    ...COMPONENTS
-  ]
+  imports: [SharedModule, HttpClientModule],
+  declarations: COMPONENTS,
+  exports: COMPONENTS
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
