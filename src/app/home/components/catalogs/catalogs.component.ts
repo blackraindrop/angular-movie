@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Catalog } from '../../models/catalog';
 
 @Component({
   selector: 'app-catalogs',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalogs.component.scss']
 })
 export class CatalogsComponent implements OnInit {
+  @Input()
+  catalogs: Catalog[];
 
   constructor() { }
 

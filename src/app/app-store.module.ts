@@ -5,9 +5,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { reducers } from './core/reducers';
+
 @NgModule({
   imports: [
-    StoreModule.forRoot({ routerReducer: routerReducer }),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule,
     StoreDevtoolsModule.instrument()
