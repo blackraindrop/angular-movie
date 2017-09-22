@@ -1,4 +1,5 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector, StoreModule } from '@ngrx/store';
+import { NgModule } from '@angular/core';
 import * as fromCatalog from './catalog';
 import * as fromRoot from '../../core/reducers';
 
@@ -25,3 +26,10 @@ export const getHomeCatalogs = createSelector(
   getHomeCatalogState,
   fromCatalog.getCatalogs
 );
+
+@NgModule({
+  imports: []
+})
+export class HomeStoreModule {
+
+}

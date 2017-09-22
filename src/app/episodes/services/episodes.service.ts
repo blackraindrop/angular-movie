@@ -5,17 +5,17 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Result } from '../../core/models/result';
-import { Catalog } from '../models/catalog';
+import { Episode } from '../models';
 
 @Injectable()
-export class CatalogsService {
+export class EpisodesService {
 
-  private catalogsUrl = 'api/catalogs';
+  private url = 'api/albums';
 
   constructor(private http: HttpClient) { }
 
-  getCatalogs(): Observable<Catalog[]> {
-    return this.http.get<Result<Catalog[]>>(this.catalogsUrl)
+  getList(): Observable<Episode[]> {
+    return this.http.get<Result<Episode[]>>(this.url)
       .map(data => data.result);
   }
 

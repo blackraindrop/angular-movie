@@ -1,22 +1,22 @@
-import { Catalog } from '../models/catalog';
-import * as actions from '../actions/catalog';
+import { Movie } from '../models';
+import * as actions from '../actions/movies';
 
 export interface State {
-  catalogs: Catalog[];
+  movies: Movie[];
 }
 
 const initialState: State = {
-  catalogs: []
+  movies: []
 };
 
 export function reducer(state = initialState, action: actions.Actions): State {
   switch (action.type) {
     case actions.LOAD_SUCCESS:
-      return { catalogs: action.payload };
+      return { movies: action.payload };
     case actions.LOAD_FAIL:
     default:
       return state;
   }
 }
 
-export const getCatalogs = (state: State) => state.catalogs;
+export const getMovies = (state: State) => state.movies;

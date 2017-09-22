@@ -1,13 +1,13 @@
-import { Action } from '@ngrx/store';
-import { Movie } from '../models/movie';
 
-export const LOAD = '[Catalog] Load';
-export const LOAD_SUCCESS = '[Catalog] Load Success';
-export const LOAD_FAIL = '[Catalog] Load Fail';
+import { Action } from '@ngrx/store';
+import { Movie } from '../models';
+
+export const LOAD = '[Movie] Load';
+export const LOAD_SUCCESS = '[Movie] Load Success';
+export const LOAD_FAIL = '[Movie] Load Fail';
 
 export class Load implements Action {
   readonly type = LOAD;
-  constructor(public payload: string) { }
 }
 
 export class LoadSuccess implements Action {

@@ -21,6 +21,7 @@ export class LoadFail implements Action {
   constructor(public payload: string) { }
 }
 
+
 export type Actions =
   | Load
   | LoadSuccess

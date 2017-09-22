@@ -1,9 +1,9 @@
 import { Action } from '@ngrx/store';
-import { Catalog } from '../models/catalog';
+import { Album } from './model';
 
-export const LOAD = '[Catalog] Load';
-export const LOAD_SUCCESS = '[Catalog] Load Success';
-export const LOAD_FAIL = '[Catalog] Load Fail';
+export const LOAD = '[Album] Load';
+export const LOAD_SUCCESS = '[Album] Load Success';
+export const LOAD_FAIL = '[Album] Load Fail';
 
 export class Load implements Action {
   readonly type = LOAD;
@@ -12,7 +12,7 @@ export class Load implements Action {
 export class LoadSuccess implements Action {
   readonly type = LOAD_SUCCESS;
 
-  constructor(public payload: Catalog[]) { }
+  constructor(public payload: Album[]) { }
 }
 
 export class LoadFail implements Action {

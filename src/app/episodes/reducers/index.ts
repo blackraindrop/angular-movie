@@ -1,13 +1,9 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
-import * as fromCatalog from './catalog';
+import * as fromCatalog from './episode';
 import * as fromRoot from '../../core/reducers';
 
-export interface HomeState {
-  catalog: fromCatalog.State;
-}
-
 export interface State extends fromRoot.State {
-  home: HomeState;
+  catalog: fromCatalog.State;
 }
 
 export const reducers = {
@@ -23,5 +19,5 @@ export const getHomeCatalogState = createSelector(
 
 export const getHomeCatalogs = createSelector(
   getHomeCatalogState,
-  fromCatalog.getCatalogs
+  fromCatalog.getEpisodes
 );

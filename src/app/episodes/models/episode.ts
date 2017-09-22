@@ -1,5 +1,5 @@
 
-export interface Movie {
+export interface Episode {
   path: string;
   name: string;
   cover: boolean;

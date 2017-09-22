@@ -10,12 +10,12 @@ import { Catalog } from '../models/catalog';
 @Injectable()
 export class CatalogsService {
 
-  private catalogsUrl = 'api/catalogs';
+  private url = 'api/catalogs';
 
   constructor(private http: HttpClient) { }
 
-  getCatalogs(): Observable<Catalog[]> {
-    return this.http.get<Result<Catalog[]>>(this.catalogsUrl)
+  getList(): Observable<Catalog[]> {
+    return this.http.get<Result<Catalog[]>>(this.url)
       .map(data => data.result);
   }
 

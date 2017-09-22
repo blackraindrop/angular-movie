@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Result } from '../../core/models/result';
-import { Movie } from '../models/movie';
-
 import { Observable } from 'rxjs/Observable';
-
 import 'rxjs/add/operator/map';
 
-@Injectable()
-export class CatalogsService {
+import { Result } from '../../../core/models/result';
+import { Album } from './model';
 
-  private catalogsUrl = 'api/movies?path=';
+@Injectable()
+export class AlbumsService {
+
+  private url = 'api/albums';
 
   constructor(private http: HttpClient) { }
 
-  getCatalogs(): Observable<Movie[]> {
-    return this.http.get<Result<Movie[]>>(this.catalogsUrl)
+  getList(): Observable<Album[]> {
+    return this.http.get<Result<Album[]>>(this.url)
       .map(data => data.result);
   }
 
