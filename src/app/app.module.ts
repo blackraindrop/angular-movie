@@ -9,6 +9,9 @@ import { AppStoreModule } from './app-store.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//应用一
+import { PagesModule } from '@pages/index';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +22,8 @@ import { AppComponent } from './app.component';
     CoreModule,
     SharedModule,
     AppRoutingModule,
-    AppStoreModule
+    AppStoreModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

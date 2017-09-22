@@ -30,10 +30,10 @@ export class CatalogEffects {
         .catch(error => Observable.of(new actions.LoadFail(error)))
     );
 
-  @Effect()
-  loadSuccess$: Observable<Action> = this.actions$
-    .ofType(actions.LOAD_SUCCESS)
-    .do((action: actions.LoadSuccess) => this.router.navigate(['/album', action.payload[0].path]));
+  // @Effect()
+  // loadSuccess$: Observable<Action> = this.actions$
+  //   .ofType(actions.LOAD_SUCCESS)
+  //   .do((action: actions.LoadSuccess) => this.router.navigate(['/album', action.payload[0].path]));
 
   constructor(private actions$: Actions, private servcie: CatalogsService, public router: Router) { }
 }

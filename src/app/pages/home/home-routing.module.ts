@@ -4,8 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './containers/home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: '', loadChildren: '' }  
+  {
+    path: '',
+    component: HomePageComponent,
+    children: [
+      { path: 'album', loadChildren: 'app/pages/albums/albums.module#AlbumsModule' }
+    ]
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Catalog } from '../../models/catalog';
+import { Catalog } from '@pages/index';
 
 @Component({
   selector: 'app-catalogs',
