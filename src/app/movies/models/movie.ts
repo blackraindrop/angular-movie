@@ -1,5 +1,5 @@
 export interface Movie {
-    path: string;
+    cover: string;
     name: string;
     empty: boolean;
 }
