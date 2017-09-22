@@ -1,10 +1,6 @@
-import { Component, OnInit, InjectionToken, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
-import { Catalog } from '../../models/catalog';
+import { Component, OnInit, Input } from '@angular/core';
 
-export const CatalogsToken = new InjectionToken('CatalogsToken');
+import { Catalog } from '../../models/catalog';
 
 @Component({
   selector: 'app-catalogs',
@@ -12,17 +8,11 @@ export const CatalogsToken = new InjectionToken('CatalogsToken');
   styleUrls: ['./catalogs.component.scss']
 })
 export class CatalogsComponent implements OnInit {
-  catalogs$: Observable<Catalog>;
-  constructor(
-    public http: HttpClient,
-    public store$: Store<any>,
-    @Inject(CatalogsToken) public catalogsToken: any
-  ) {
-    this.catalogs$ = this.store$.select<Catalog>(this.catalogsToken);
-  }
+  @Input()
+  catalogs: Catalog[];
 
-  ngOnInit() {
-    console.log(this.http);
-  }
+  constructor() { }
+
+  ngOnInit() {}
 
 }

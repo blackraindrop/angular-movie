@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { Observable } from 'rxjs/Observable';
+
+import { Catalog } from '../../models/catalog';
+import * as fromHome from '../../reducers';
+import * as catalog from '../../actions/catalog';
 
 @Component({
   selector: 'app-home-page',
@@ -6,11 +13,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  catalogs$: Observable<Catalog[]>;
 
-  constructor() { }
+  constructor(private store: Store<fromHome.State>) {
+    this.catalogs$ = store.select(fromHome.getHomeCatalogs);
+  }
 
   ngOnInit() {
-
+    this.store.dispatch(new catalog.Load());
   }
 
 }
