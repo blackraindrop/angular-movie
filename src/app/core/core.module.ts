@@ -5,17 +5,20 @@ import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+const COMPONENTS = [
+  HeaderComponent,
+  SidebarComponent
+];
+
 @NgModule({
   imports: [
     SharedModule
   ],
   declarations: [
-    HeaderComponent,
-    SidebarComponent
+    ...COMPONENTS
   ],
   exports: [
-    HeaderComponent,
-    SidebarComponent
+    ...COMPONENTS
   ]
 })
 export class CoreModule {
