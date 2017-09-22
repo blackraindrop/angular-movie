@@ -1,3 +1,5 @@
-<ul>
-  <li *ngFor="let catalog of catalogs">{{catalog.name}}</li>
-</ul>
+<md-nav-list>
+  <md-list-item *ngFor="let catalog of catalogs">
+    <span md-line>{{catalog.name}}</span>
+  </md-list-item>
+</md-nav-list>

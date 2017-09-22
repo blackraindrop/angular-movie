@@ -1,4 +1,4 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { ActionReducerMap, createSelector, createFeatureSelector } from '@ngrx/store';
 import * as fromCatalog from './catalog';
 import * as fromRoot from '../../core/reducers';
 
@@ -10,7 +10,7 @@ export interface State extends fromRoot.State {
   home: HomeState;
 }
 
-export const reducers = {
+export const reducers: ActionReducerMap<HomeState> = {
   catalog: fromCatalog.reducer
 };
 

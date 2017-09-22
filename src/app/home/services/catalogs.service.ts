@@ -10,7 +10,7 @@ import { Catalog } from '../models/catalog';
 @Injectable()
 export class CatalogsService {
 
-  private catalogsUrl = 'api/catalogs';
+  private catalogsUrl = 'api/v1/catalogs';
 
   constructor(private http: HttpClient) { }
 

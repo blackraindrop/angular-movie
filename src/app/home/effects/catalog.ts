@@ -5,6 +5,7 @@ import { Effect, Actions } from '@ngrx/effects';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/switchMap';
 
@@ -16,7 +17,7 @@ import * as catalog from '../actions/catalog';
 export class CatalogEffects {
 
   @Effect()
-  loadCollection$: Observable<Action> = this.actions$
+  loadCatalogs$: Observable<Action> = this.actions$
     .ofType(catalog.LOAD)
     .switchMap(() =>
       this.catalogsService
@@ -24,6 +25,13 @@ export class CatalogEffects {
         .map((catalogs: Catalog[]) => new catalog.LoadSuccess(catalogs))
         .catch(error => Observable.of(new catalog.LoadFail(error)))
     );
+
+  @Effect({ dispatch: false })
+  gotoAlbum$: Observable<Action> = this.actions$
+    .ofType(catalog.LOAD_SUCCESS)
+    .do((action: catalog.LoadSuccess) => {
+      console.log(action);
+    });
 
   constructor(private actions$: Actions, private catalogsService: CatalogsService) { }
 }
