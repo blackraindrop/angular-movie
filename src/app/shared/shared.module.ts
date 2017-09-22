@@ -3,19 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 
-const MATERIALMODULES = [
-  MdToolbarModule,
+const MODULES = [
+  CommonModule,
+  MdSidenavModule,
   MdToolbarModule
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ...MATERIALMODULES
-  ],
-  exports: [
-    ...MATERIALMODULES
-  ],
+  imports: MODULES,
+  exports: MODULES,
   declarations: []
 })
 export class SharedModule { }

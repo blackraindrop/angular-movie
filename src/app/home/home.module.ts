@@ -11,6 +11,9 @@ import { CatelogsComponent } from './components/catelogs/catelogs.component';
     SharedModule,
     HomeRoutingModule
   ],
-  declarations: [HomePageComponent, CatelogsComponent]
+  declarations: [
+    HomePageComponent,
+    CatelogsComponent
+  ]
 })
 export class HomeModule { }

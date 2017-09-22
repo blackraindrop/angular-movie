@@ -9,15 +9,9 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule
-  ],
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    ...COMPONENTS
-  ]
+  imports: [SharedModule],
+  declarations: COMPONENTS,
+  exports: COMPONENTS
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
