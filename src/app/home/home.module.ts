@@ -4,7 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './containers/home-page/home-page.component';
-import { CatelogsComponent } from './components/catelogs/catelogs.component';
+import { CatalogsComponent } from './components/catalogs/catalogs.component';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { CatelogsComponent } from './components/catelogs/catelogs.component';
   ],
   declarations: [
     HomePageComponent,
-    CatelogsComponent
+    CatalogsComponent
   ]
 })
 export class HomeModule { }
