@@ -5,8 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { CustomRouterStateSerializer } from './core/utils/utils';
-import { reducers } from './core/reducers';
+import { CustomRouterStateSerializer } from '@core/utils/utils';
+import { reducers } from '@core/reducers';
 
 @NgModule({
   imports: [
