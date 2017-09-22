@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-catalogs',
   templateUrl: './catalogs.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public http: HttpClient
+  ) { }
 
   ngOnInit() {
+    console.log(this.http);
   }
 
 }
