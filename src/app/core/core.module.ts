@@ -1,4 +1,5 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -9,7 +10,7 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [SharedModule],
+  imports: [SharedModule, HttpClientModule],
   declarations: COMPONENTS,
   exports: COMPONENTS
 })
