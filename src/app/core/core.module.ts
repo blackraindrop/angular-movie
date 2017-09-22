@@ -5,20 +5,13 @@ import { SharedModule } from '../shared/shared.module';
 import * as components from './components';
 
 const COMPONENTS = [
-  components.HeaderComponent,
-  components.SidebarComponent
+  components.HeaderComponent
 ];
 
 @NgModule({
-  imports: [
-    SharedModule
-  ],
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    ...COMPONENTS
-  ]
+  imports: [SharedModule],
+  declarations: COMPONENTS,
+  exports: COMPONENTS
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

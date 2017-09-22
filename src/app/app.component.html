@@ -1,13 +1,6 @@
-<div class="container">
-    <header>
-        <app-header></app-header>
-    </header>
-    <main>
-        <md-sidenav-container>
-            <md-sidenav [opened]="true" mode="side">
-                <app-sidebar></app-sidebar>
-            </md-sidenav>
-            <router-outlet></router-outlet>
-        </md-sidenav-container>
-    </main>
-</div>
+<header>
+  <app-header></app-header>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
