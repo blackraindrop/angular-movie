@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { MdSidenavModule, MdToolbarModule } from '@angular/material';
 
+const MATERIALMODULES = [
+  MdToolbarModule,
+  MdToolbarModule
+];
+
 @NgModule({
   imports: [
     CommonModule,
-    MdSidenavModule,
-    MdToolbarModule
+    ...MATERIALMODULES
   ],
   exports: [
-    MdSidenavModule,
-    MdToolbarModule
+    ...MATERIALMODULES
   ],
   declarations: []
 })

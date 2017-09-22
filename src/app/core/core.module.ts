@@ -4,15 +4,19 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HeaderComponent } from './components/header/header.component';
 
+const COMPONENTS = [
+  HeaderComponent
+];
+
 @NgModule({
   imports: [
     SharedModule
   ],
   declarations: [
-    HeaderComponent
+    ...COMPONENTS
   ],
   exports: [
-    HeaderComponent
+    ...COMPONENTS
   ]
 })
 export class CoreModule {
