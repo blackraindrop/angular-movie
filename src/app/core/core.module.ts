@@ -2,10 +2,10 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { HeaderComponent } from './components/header/header.component';
+import * as components from './components';
 
 const COMPONENTS = [
-  HeaderComponent
+  components.HeaderComponent
 ];
 
 @NgModule({
