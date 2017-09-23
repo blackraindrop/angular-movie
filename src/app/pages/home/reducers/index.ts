@@ -42,3 +42,8 @@ export const getHomeCatalogs = createSelector(
   getHomeCatalogState,
   fromCatalog.getCatalogs
 );
+
+export const getHomeSelectedIndex = createSelector(
+  getHomeCatalogState,
+  fromCatalog.getSelectedIndex
+);

@@ -38,6 +38,11 @@ export const getMovieMovies = createSelector(
   fromMovie.getMovies
 );
 
+export const getMovieSelectedIndex = createSelector(
+  getMovieMovieState,
+  fromMovie.getSelectedIndex
+);
+
 export const getMovieEpisode = createSelector(
   getMovieEpisodeState,
   fromEpisode.getEpisode

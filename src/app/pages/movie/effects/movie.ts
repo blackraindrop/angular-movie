@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 
 import { Observable } from 'rxjs/Observable';
@@ -12,6 +12,7 @@ import 'rxjs/add/operator/switchMap';
 import { MovieService } from '../services/movie.service';
 import { Movie } from '../models/movie';
 
+import * as fromMovie from '../reducers';
 import * as episodeActions from '../actions/episode';
 import * as movieActions from '../actions/movie';
 
@@ -29,12 +30,19 @@ export class MovieEffects {
     );
 
   @Effect()
+  loadSuccess$: Observable<Action> = this.actions$
+    .ofType(movieActions.LOAD_SUCCESS)
+    .withLatestFrom(this.store$.select(fromMovie.getMovieSelectedIndex))
+    .map(([action, index]: [movieActions.LoadSuccess, number]) => new episodeActions.Load(action.payload[index].path));
+
+  @Effect()
   select$: Observable<Action> = this.actions$
     .ofType(movieActions.SELECT)
     .map((action: movieActions.Select) => new episodeActions.Load(action.payload.path));
 
   constructor(
     private actions$: Actions,
-    private service: MovieService
+    private service: MovieService,
+    private store$: Store<fromMovie.State>
   ) { }
 }

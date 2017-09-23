@@ -4,16 +4,18 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { storeFreeze } from 'ngrx-store-freeze';
 
+import { environment } from '../environments/environment';
 import { CustomRouterStateSerializer } from '@core/utils/utils';
-import { reducers } from '@core/reducers';
+import { reducers, logger } from '@core/reducers';
 
 @NgModule({
   imports: [
-    StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot(reducers, { metaReducers: !environment.production ? [storeFreeze] : [] }),
     StoreRouterConnectingModule,
-    StoreDevtoolsModule.instrument()
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([])
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }

@@ -23,7 +23,7 @@ export class LoadFail implements Action {
 }
 
 export class Select implements Action {
-  readonly type = LOAD_FAIL;
+  readonly type = SELECT;
 
   constructor(public payload: Catalog) { }
 }

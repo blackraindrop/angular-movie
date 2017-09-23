@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onSelectCatalog(catalog: Catalog) {
-    this.store.dispatch(new albumActions.Load(catalog.path));
+    this.store.dispatch(new catalogActions.Select(catalog));
   }
 
   onSelectAlbum(album: Album) {
