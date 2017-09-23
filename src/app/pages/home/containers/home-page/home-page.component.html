@@ -1,8 +1,6 @@
-<!-- <md-sidenav-container>
-    <md-sidenav [opened]="true" mode="side">
-        <app-catalogs [catalogs]="catalogs$ | async"></app-catalogs>
-    </md-sidenav>
-    <router-outlet></router-outlet>
-</md-sidenav-container> -->
-
-movies
+<md-sidenav-container>
+  <md-sidenav [opened]="true" mode="side">
+    <app-catalogs [catalogs]="catalogs$ | async" (select)="onSelectCatalog($event)"></app-catalogs>
+  </md-sidenav>
+  <app-albums [albums]="albums$ | async"></app-albums>
+</md-sidenav-container>

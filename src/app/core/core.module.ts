@@ -3,10 +3,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 
-import * as components from './components';
+import { HeaderComponent } from './components/header/header.component';
 
 const COMPONENTS = [
-  components.HeaderComponent
+  HeaderComponent
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { Catalog } from '../models/catalog';
 export const LOAD = '[Catalog] Load';
 export const LOAD_SUCCESS = '[Catalog] Load Success';
 export const LOAD_FAIL = '[Catalog] Load Fail';
+export const SELECT = '[Catalog] Select';
 
 export class Load implements Action {
   readonly type = LOAD;
@@ -21,8 +22,14 @@ export class LoadFail implements Action {
   constructor(public payload: string) { }
 }
 
+export class Select implements Action {
+  readonly type = LOAD_FAIL;
+
+  constructor(public payload: Catalog) { }
+}
 
 export type Actions =
   | Load
   | LoadSuccess
-  | LoadFail;
+  | LoadFail
+  | Select;

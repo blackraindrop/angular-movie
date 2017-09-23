@@ -2,7 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { MdSidenavModule, MdToolbarModule, MdListModule, MdButtonModule } from '@angular/material';
+import {
+  MdSidenavModule,
+  MdToolbarModule,
+  MdListModule,
+  MdCardModule,
+  MdButtonModule
+} from '@angular/material';
 
 const MODULES = [
   CommonModule,
@@ -10,6 +16,7 @@ const MODULES = [
   MdSidenavModule,
   MdToolbarModule,
   MdListModule,
+  MdCardModule,
   MdButtonModule
 ];
 
