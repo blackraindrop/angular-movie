@@ -1,10 +1,10 @@
 import { Action } from '@ngrx/store';
-import { Album } from '../models/album';
+import { Movie } from '../models/movie';
 
-export const LOAD = '[Album] Load';
-export const LOAD_SUCCESS = '[Album] Load Success';
-export const LOAD_FAIL = '[Album] Load Fail';
-export const SELECT = '[Album] SELECT';
+export const LOAD = '[Movie] Load';
+export const LOAD_SUCCESS = '[Movie] Load Success';
+export const LOAD_FAIL = '[Movie] Load Fail';
+export const SELECT = '[Movie] SELECT';
 
 export class Load implements Action {
   readonly type = LOAD;
@@ -15,7 +15,7 @@ export class Load implements Action {
 export class LoadSuccess implements Action {
   readonly type = LOAD_SUCCESS;
 
-  constructor(public payload: Album[]) { }
+  constructor(public payload: Movie[]) { }
 }
 
 export class LoadFail implements Action {
@@ -27,7 +27,7 @@ export class LoadFail implements Action {
 export class Select implements Action {
   readonly type = SELECT;
 
-  constructor(public payload: Album) { }
+  constructor(public payload: Movie) { }
 }
 
 export type Actions =

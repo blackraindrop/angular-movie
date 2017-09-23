@@ -2,5 +2,5 @@
   <md-sidenav [opened]="true" mode="side">
     <app-catalogs [catalogs]="catalogs$ | async" (select)="onSelectCatalog($event)"></app-catalogs>
   </md-sidenav>
-  <app-albums [albums]="albums$ | async"></app-albums>
+  <app-albums [albums]="albums$ | async" (select)="onSelectAlbum($event)"></app-albums>
 </md-sidenav-container>

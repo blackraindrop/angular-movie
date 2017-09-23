@@ -12,7 +12,7 @@ export class AlbumsComponent implements OnInit {
   albums: Album[];
 
   @Output()
-  selected: EventEmitter<Album> = new EventEmitter();
+  select: EventEmitter<Album> = new EventEmitter();
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class AlbumsComponent implements OnInit {
   }
 
   onClick(album: Album) {
-    this.selected.emit(album);
+    this.select.emit(album);
   }
 
 }

@@ -8,14 +8,14 @@ import { Result } from '@core/models/result';
 import { Album } from '../models/album';
 
 @Injectable()
-export class AlbumsService {
+export class AlbumService {
 
   private url = 'api/v1/albums';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getList(path: string): Observable<Album[]> {
-    return this.http.get<Result<Album[]>>(`${this.url}?path=${path}`)
+    return this.httpClient.get<Result<Album[]>>(`${this.url}?path=${path}`)
       .map(data => data.result);
   }
 

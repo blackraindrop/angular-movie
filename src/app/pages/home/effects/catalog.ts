@@ -10,34 +10,37 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switchMap';
 
-import { CatalogsService } from '../services/catalogs.service';
+import { CatalogService } from '../services/catalog.service';
 import { Catalog } from '../models/catalog';
 
-import * as album from '../actions/album';
-import * as catalog from '../actions/catalog';
+import * as albumActions from '../actions/album';
+import * as catalogActions from '../actions/catalog';
 
 @Injectable()
 export class CatalogEffects {
 
   @Effect()
   load$: Observable<Action> = this.actions$
-    .ofType(catalog.LOAD)
+    .ofType(catalogActions.LOAD)
     .switchMap(() =>
       this.service
         .getList()
-        .map((catalogs: Catalog[]) => new catalog.LoadSuccess(catalogs))
-        .catch(error => Observable.of(new catalog.LoadFail(error)))
+        .map((catalogs: Catalog[]) => new catalogActions.LoadSuccess(catalogs))
+        .catch(error => Observable.of(new catalogActions.LoadFail(error)))
     );
 
   @Effect()
   loadSuccess$: Observable<Action> = this.actions$
-    .ofType(catalog.LOAD_SUCCESS)
-    .map((action: catalog.LoadSuccess) => new album.Load(action.payload[1].path));
+    .ofType(catalogActions.LOAD_SUCCESS)
+    .map((action: catalogActions.LoadSuccess) => new albumActions.Load(action.payload[0].path));
 
   @Effect()
   select$: Observable<Action> = this.actions$
-    .ofType(catalog.SELECT)
-    .map((action: catalog.Select) => new album.Load(action.payload.path));
+    .ofType(catalogActions.SELECT)
+    .map((action: catalogActions.Select) => new albumActions.Load(action.payload.path));
 
-  constructor(private actions$: Actions, private service: CatalogsService) { }
+  constructor(
+    private actions$: Actions,
+    private service: CatalogService
+  ) { }
 }

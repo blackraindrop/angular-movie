@@ -1,6 +1,4 @@
 <md-nav-list>
-  <h3 md-subheader>分类</h3>
-  <md-divider></md-divider>
   <md-list-item *ngFor="let catalog of catalogs" (click)="onClick(catalog)">
     {{catalog.name}}
   </md-list-item>

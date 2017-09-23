@@ -1,1 +1,1 @@
-<app-album-item *ngFor="let album of albums" [album]="album"></app-album-item>
+<app-album-item *ngFor="let album of albums" [album]="album" (click)="onClick(album)"></app-album-item>
