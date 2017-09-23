@@ -1,3 +1,7 @@
-<ul>
-    <li *ngFor="let catalog of catalogs">{{catalog.name}}</li>
-</ul>
+<md-list>
+    <h3 md-subheader>分类</h3>
+    <md-list-item *ngFor="let catalog of catalogs">
+        <button [color]="activeCatalog === catalog ? 'accent' : ''" (click)="onClick(catalog)" md-button>{{catalog.name}}</button>
+    </md-list-item>
+    <md-divider></md-divider>
+</md-list>
