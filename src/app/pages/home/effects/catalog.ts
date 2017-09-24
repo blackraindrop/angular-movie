@@ -34,13 +34,15 @@ export class CatalogEffects {
   @Effect()
   loadSuccess$: Observable<Action> = this.actions$
     .ofType(catalogActions.LOAD_SUCCESS)
+    .map((action: catalogActions.LoadSuccess) => action.payload)
     .withLatestFrom(this.store$.select(fromHome.getHomeSelectedIndex))
-    .map(([action, index]: [catalogActions.LoadSuccess, number]) => new albumActions.Load(action.payload[index].path));
+    .map(([catalogs, index]: [Catalog[], number]) => new albumActions.Load(catalogs[index].path));
 
   @Effect()
   select$: Observable<Action> = this.actions$
     .ofType(catalogActions.SELECT)
-    .map((action: catalogActions.Select) => new albumActions.Load(action.payload.path));
+    .map((action: catalogActions.Select) => action.payload)
+    .map((catalog: Catalog) => new albumActions.Load(catalog.path));
 
   constructor(
     private actions$: Actions,

@@ -5,7 +5,7 @@ export interface State {
   albums: Album[];
 }
 
-const initialState: State = {
+export const initialState: State = {
   albums: []
 };
 

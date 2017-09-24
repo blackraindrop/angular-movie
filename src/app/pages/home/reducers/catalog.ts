@@ -6,7 +6,7 @@ export interface State {
   selectedIndex: number;
 }
 
-const initialState: State = {
+export const initialState: State = {
   catalogs: [],
   selectedIndex: 0
 };

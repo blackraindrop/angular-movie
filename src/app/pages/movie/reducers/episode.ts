@@ -5,7 +5,7 @@ export interface State {
   episode: Episode;
 }
 
-const initialState: State = {
+export const initialState: State = {
   episode: { url: '' }
 };
 
