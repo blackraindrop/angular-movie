@@ -23,4 +23,4 @@ export function reducer(state = initialState, action: actions.Actions): State {
 }
 
 export const getCatalogs = (state: State) => state.catalogs;
-export const getSelectedIndex = (state) => state.selectedIndex;
+export const getSelectedIndex = (state: State) => state.selectedIndex;

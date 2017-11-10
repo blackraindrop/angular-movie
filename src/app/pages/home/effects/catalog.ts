@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/withLatestFrom';
 
@@ -35,8 +36,9 @@ export class CatalogEffects {
   loadSuccess$: Observable<Action> = this.actions$
     .ofType(catalogActions.LOAD_SUCCESS)
     .map((action: catalogActions.LoadSuccess) => action.payload)
+    .filter((catalogs: Catalog[]) => catalogs.length > 0)
     .withLatestFrom(this.store$.select(fromHome.getHomeSelectedIndex))
-    .map(([catalogs, index]: [Catalog[], number]) => new albumActions.Load(catalogs[index].path));
+    .map(([catalogs, index]) => new albumActions.Load(catalogs[index].path));
 
   @Effect()
   select$: Observable<Action> = this.actions$

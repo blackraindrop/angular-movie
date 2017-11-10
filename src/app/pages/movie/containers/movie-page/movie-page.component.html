@@ -1,6 +1,6 @@
-<md-sidenav-container>
-  <md-sidenav [opened]="true" mode="side">
+<mat-sidenav-container>
+  <mat-sidenav [opened]="true" mode="side">
     <app-movies [movies]="movies$ | async" (select)="onSelectMovie($event)"></app-movies>
-  </md-sidenav>
+  </mat-sidenav>
   <app-player [episode]="episode$ | async"></app-player>
-</md-sidenav-container>
+</mat-sidenav-container>

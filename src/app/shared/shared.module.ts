@@ -3,21 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import {
-  MdSidenavModule,
-  MdToolbarModule,
-  MdListModule,
-  MdCardModule,
-  MdButtonModule
+  MatSidenavModule,
+  MatToolbarModule,
+  MatListModule,
+  MatCardModule,
+  MatButtonModule
 } from '@angular/material';
 
 const MODULES = [
   CommonModule,
   FormsModule,
-  MdSidenavModule,
-  MdToolbarModule,
-  MdListModule,
-  MdCardModule,
-  MdButtonModule
+  MatSidenavModule,
+  MatToolbarModule,
+  MatListModule,
+  MatCardModule,
+  MatButtonModule
 ];
 
 @NgModule({

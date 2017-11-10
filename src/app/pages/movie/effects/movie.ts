@@ -34,7 +34,7 @@ export class MovieEffects {
     .ofType(movieActions.LOAD_SUCCESS)
     .map((action: movieActions.LoadSuccess) => action.payload)
     .withLatestFrom(this.store$.select(fromMovie.getMovieSelectedIndex))
-    .map(([movies, index]: [Movie[], number]) => new episodeActions.Load(movies[index].path));
+    .map(([movies, index]) => new episodeActions.Load(movies[index].path));
 
   @Effect()
   select$: Observable<Action> = this.actions$

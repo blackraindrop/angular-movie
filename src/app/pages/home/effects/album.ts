@@ -30,7 +30,9 @@ export class AlbumEffects {
   @Effect({ dispatch: false })
   select$: Observable<Action> = this.actions$
     .ofType(actions.SELECT)
-    .do((action: actions.Select) => this.router.navigate(['/movie'], { queryParams: { path: action.payload.path } }));
+    .do((action: actions.Select) =>
+      this.router.navigate(['/movie'], { queryParams: { path: action.payload.path } })
+    );
 
   constructor(
     private actions$: Actions,
