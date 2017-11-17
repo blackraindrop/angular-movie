@@ -220,9 +220,9 @@
   version "6.0.90"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-6.0.90.tgz#0ed74833fa1b73dcdb9409dcb1c97ec0a8b13b02"
 
-"@types/node@^8.0.50":
-  version "8.0.50"
-  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-8.0.50.tgz#dc545448e128c88c4eec7cd64025fcc3b7604541"
+"@types/node@^8.0.51":
+  version "8.0.51"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
 
 "@types/q@^0.0.32":
   version "0.0.32"
